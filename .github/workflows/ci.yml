@@ -51,7 +51,7 @@ jobs:
 
       - name: Backup current deployment
         run: |
-          $backup = "C:\Backups\MyReactApp\$(Get-Date -Format yyyyMMddHHmmss)"
+          $backup = Join-Path 'C:\Backups\MyReactApp' (Get-Date -Format 'yyyyMMddHHmmss')
           New-Item -ItemType Directory -Force -Path $backup
           robocopy C:\inetpub\wwwroot\careai.vn $backup /E
 
