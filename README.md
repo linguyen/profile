@@ -33,4 +33,4 @@ See the `LICENSE` file in the repository.
 
 Contact
 
-Add contact details or project links here.
+Visit my site here. [careai.vn](https://careai.vn/)
