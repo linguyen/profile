@@ -1,4 +1,4 @@
-import profile from '@/assets/profile.jpg';
+import profile from "@/assets/profile.jpg";
 
 function Hero() {
   return (
@@ -21,7 +21,7 @@ function Hero() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="reveal text-sm font-medium text-accent tracking-widest uppercase mb-4">
-                Available for helping you with your next project
+                <span className="text-white">Available for helping your </span>non-profit project
               </p>
               <h1 className="reveal d1 font-display font-bold text-5xl md:text-6xl lg:text-4xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
                 Hi, I'm{" "}
@@ -32,16 +32,20 @@ function Hero() {
                 <strong className="font-medium text-zinc-700 dark:text-zinc-300">
                   AI Developer{" "}
                 </strong>
-                &amp; 
-                Freelancer{" "}
+                &amp; Freelance{" "}
                 <strong className="font-medium text-zinc-700 dark:text-zinc-300">
                   Umbraco Developer
-                </strong>
-                . I also develop and deliver non-profit{" "}
-                <strong className="font-medium text-zinc-700 dark:text-zinc-300">
-                  AI projects
                 </strong>{" "}
-                that people can use.
+                with a strong passion for artificial intelligence and building{" "}
+                <strong className="font-medium text-zinc-700 dark:text-zinc-300">
+                  innovative AI solutions
+                </strong>
+                . . I have designed, developed, and delivered{" "}
+                <strong className="font-medium text-zinc-700 dark:text-zinc-300">
+                  non-profit AI projects
+                </strong>{" "}
+                that provide practical value while prioritising safety,
+                reliability, and user experience.
               </p>
               <div className="reveal d3 flex flex-wrap gap-4">
                 <a
