@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "tags": ["Web Development", ".NET", "SEO", "Open Source"],
+        "title": ".NET Open Source For SEO",
+        "description": "Develop a .NET Open Source project that focuses on SEO optimization and best practices. The project is provided full source with all features to help developers build, deploy and enjoy a website with the SEO performance of their .NET applications and React JS.",
+        "image": "demo.png",
+        "link": "/work/net-open-source-for-seo"
+    },
+    {
+        "id": 2,
+        "tags": ["Expo", "React Native", "Open AI Integration", "Mobile App", "Fintech"],
+        "title": "Gold Savings Mobile App",
+        "description": "Develop a mobile application for managing gold savings. The app allows users to track their gold investments, view market prices, and manage their portfolio efficiently.",
+        "image": "demo.png",
+        "link": "/work/gold-savings-mobile-app"
+    },
+    {
+        "id": 3,
+        "tags": ["Chatbot", "Web Development", "Mobile App", "Open AI Integration", "LLMs", "Python"],
+        "title": "Small Chatbot Project",
+        "description": "Develop a small chatbot project that can handle basic customer inquiries and provide automated responses. The project utilizes natural language processing and machine learning techniques to improve its accuracy over time.",
+        "image": "demo.png",
+        "link": "/work/small-chatbot-project"
+    }
+]
