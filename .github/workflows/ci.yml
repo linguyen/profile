@@ -8,7 +8,7 @@ on:
 jobs:
   lint:
     name: Lint (ESLint)
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Windows, X64]
 
     steps:
       - name: Checkout
@@ -29,7 +29,7 @@ jobs:
 
   build:
     name: Build (Node 20)
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Windows, X64]
     needs: lint
 
     steps:
@@ -50,17 +50,20 @@ jobs:
         run: npm run build
 
       - name: Backup current deployment
+        shell: powershell
         run: |
           $backup = Join-Path 'C:\Backups\MyReactApp' (Get-Date -Format 'yyyyMMddHHmmss')
           New-Item -ItemType Directory -Force -Path $backup
           robocopy C:\inetpub\wwwroot\careai.vn $backup /E
 
       - name: Deploy
+        shell: powershell
         run: |
           robocopy dist C:\inetpub\wwwroot\careai.vn /MIR
           if ($LASTEXITCODE -lt 8) { exit 0 } else { exit $LASTEXITCODE }
 
       - name: Verify deployment
+        shell: powershell
         run: |
           if (!(Test-Path "C:\inetpub\wwwroot\careai.vn\index.html")) {
             throw "Deployment failed: index.html not found."
