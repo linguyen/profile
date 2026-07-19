@@ -52,9 +52,15 @@ jobs:
       - name: Backup current deployment
         shell: powershell
         run: |
+          $backupRoot = 'C:\Backups\MyReactApp'
           $backup = Join-Path 'C:\Backups\MyReactApp' (Get-Date -Format 'yyyyMMddHHmmss')
+          New-Item -ItemType Directory -Force -Path $backupRoot
           New-Item -ItemType Directory -Force -Path $backup
-          robocopy C:\inetpub\wwwroot\careai.vn $backup /E
+          if (Test-Path 'C:\inetpub\wwwroot\careai.vn') {
+            robocopy C:\inetpub\wwwroot\careai.vn $backup /E
+            if ($LASTEXITCODE -lt 8) { exit 0 } else { exit $LASTEXITCODE }
+          }
+          Write-Host 'No current deployment found. Skipping backup.'
 
       - name: Deploy
         shell: powershell
