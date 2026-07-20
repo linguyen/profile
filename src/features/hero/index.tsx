@@ -40,7 +40,7 @@ function Hero() {
                 <strong className="font-medium text-zinc-700 dark:text-zinc-300">
                   innovative AI solutions
                 </strong>
-                . . I have designed, developed, and delivered{" "}
+                . I have designed, developed, and delivered{" "}
                 <strong className="font-medium text-zinc-700 dark:text-zinc-300">
                   non-profit AI projects
                 </strong>{" "}
