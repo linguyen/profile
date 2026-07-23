@@ -1,39 +1,6 @@
-import { useState } from "react";
+import ContactForm from "./components/form";
 
 function Contact() {
-  const [emailData, setEmailData] = useState<{
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  }>({ name: "", email: "", subject: "", message: "" });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setEmailData({ ...emailData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("https://localhost:7001/api/email/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(emailData),
-      });
-
-      const data = await response.json();
-      if (response.ok) {
-        alert(data.message);
-      } else {
-        alert("The SMTP server is malfunctioning. Please, contact me directly at nguyenminhtuanitc@gmail.com");
-      }
-    } catch {
-      alert("The SMTP server is malfunctioning. Please, contact me directly at nguyenminhtuanitc@gmail.com");
-    }
-  };
-
   return (
     <section id="contact" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
@@ -126,87 +93,7 @@ function Contact() {
               </div>
             </div>
             <div className="reveal d2">
-              <form action="#" method="POST" onSubmit={handleSubmit}>
-                <div className="flex flex-col gap-4">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label
-                        htmlFor="fname"
-                        className="block text-xs font-medium text-zinc-400 mb-1.5"
-                      >
-                        Name <span aria-hidden="true">*</span>
-                      </label>
-                      <input
-                        onChange={handleChange}
-                        type="text"
-                        id="fname"
-                        name="name"
-                        placeholder="Jane Smith"
-                        required
-                        autoComplete="name"
-                        className="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="femail"
-                        className="block text-xs font-medium text-zinc-400 mb-1.5"
-                      >
-                        Email <span aria-hidden="true">*</span>
-                      </label>
-                      <input
-                        onChange={handleChange}
-                        type="email"
-                        id="femail"
-                        name="email"
-                        placeholder="jane@company.com"
-                        required
-                        autoComplete="email"
-                        className="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="fsubject"
-                      className="block text-xs font-medium text-zinc-400 mb-1.5"
-                    >
-                      Subject
-                    </label>
-                    <input
-                      onChange={handleChange}
-                      type="text"
-                      id="fsubject"
-                      name="subject"
-                      placeholder="Project inquiry"
-                      className="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="fmessage"
-                      className="block text-xs font-medium text-zinc-400 mb-1.5"
-                    >
-                      Message <span aria-hidden="true">*</span>
-                    </label>
-                    <textarea
-                      onChange={handleChange}
-                      id="fmessage"
-                      name="message"
-                      rows={4}
-                      placeholder="Tell me about your project..."
-                      required
-                      className="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors resize-none"
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="shimmer w-full bg-accent text-white font-display font-bold text-sm py-3.5 rounded-xl hover:bg-accent-light transition-colors"
-                  >
-                    Send message →
-                  </button>
-                </div>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
