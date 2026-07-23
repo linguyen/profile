@@ -6,6 +6,7 @@ import Contact from './features/contact'
 import Work from './features/work'
 import WorkDetail from './features/work/detail'
 import WorkList from './features/work/list'
+import Search from './features/search'
 
 function Home() {
   return (
@@ -39,6 +40,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/search" element={<Search />} />
       <Route path="/work" element={<WorkList />} />
       <Route path="/work/:workLink" element={<WorkDetail />} />
     </Routes>
